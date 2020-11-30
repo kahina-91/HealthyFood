@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    {{ category }}
+{% endblock %}
+{% block body %}
+    <div class="container food-category pb-3">
+        <div class="text-center">
+            <h1 class="text-success mb-5">{{ category }}</h1>
+        </div> 
+        <div class="container row food-list">
+            {% for food in foods %}
+                {% include 'food/_food.html.twig' %}
+            {% endfor %}    
+        </div> 
+    </div>
+{% endblock %}

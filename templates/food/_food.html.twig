@@ -1,0 +1,18 @@
+
+<div class="col-md-4">
+    <div class="card bg-light mb-3">
+        <div class="card-header text-center">
+            <strong>{{ food.name}}</strong>
+        </div>
+        <img src="{{ food.coverImage}}" alt="" style="height: 200px; width: 100%; display: block">
+        <div class="card-body">
+            <div>{{ food.introduction |slice(0, 220) }}</div>
+            <a href="{{ path('food_show', {'category': food.category, 'name': food.name })}}" class="btn btn-secondary">Learn more</a>
+            {% if app.user and app.user == food.author %}
+                <a href="{{ path('food_edit', {'name': food.name, 'category': food.category}) }}", class="btn btn-secondary">update article</a>
+                <a href="{{ path('food_delete', {'name': food.name, 'category': food.category}) }}" class="btn btn-danger" onclick="return confirm(`Are your sure to delete article : {{food.name }} ?`)">Delete article</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+          

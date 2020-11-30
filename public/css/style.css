@@ -1,0 +1,183 @@
+.logo
+{
+   width: 80px;
+}
+body
+{
+    background: url("/images/eat-3175540_1920.jpg");
+    background-size: cover;
+}
+.profile, .passwordAp
+{
+    position: relative;
+    top: 150px;
+    margin-bottom: 100px;
+  
+}
+
+#videoBG {
+    position:fixed;
+    z-index: -1;
+    width:100%;     
+    height: auto;
+}
+.avatar
+{
+    max-width: 128px;
+    max-height: 128px;
+    border-radius: 50%;
+}
+.avatar-medium
+{
+    max-width: 64px;
+    max-height: 64px;
+}
+.register
+{
+    position: relative;
+    top: 150px;
+    margin-bottom: 100px;
+}
+.jumbotron
+{
+    background: rgba(37, 194, 107, 0.4)!important;
+    position: relative;
+    top: 200px;
+  
+}
+.veget
+{
+    padding: 50px;
+}
+.food
+{
+    position: relative;
+    top: 200px;
+    margin-bottom: 200px;
+    background-color: rgba(64, 94, 3, 0.7);
+    border-radius: 20px;
+    
+}
+.pom{
+    position: relative;
+    z-index: 99;
+    top: -200px;
+    left: 150px!important;
+
+}
+.poimg
+{
+    width: 500px!important;
+    z-index: 99;
+}
+@media (min-aspect-ratio: 16/9) {
+    #videoBG {
+        width:100%;
+        height: auto;
+    }
+}
+@media (max-aspect-ratio: 16/9) {
+    #videoBG { 
+        width:auto;
+        height: 100%;
+    }
+}
+@media (max-width: 767px) {
+    #videoBG {
+        display: none;
+    }
+    body {
+        background: url('/images/video.png');
+        background-size: cover;
+    }
+}
+.connection
+{
+    position: relative;
+    top: 200px;
+}
+.alert
+{
+    position: relative;
+    top: 200px;
+}
+.addfood 
+{
+    position: relative;
+    top: 150px;
+    margin-bottom: 200px;
+}
+.typefood
+{
+    padding-bottom: 150px;
+}
+.errorpage
+{
+    position: relative;
+    top: 150px;
+    background-color: honeydew;
+}
+.food img
+{
+    width: 500px;
+    height: auto;
+}
+.principal
+{
+    margin-left: 20%;
+    background-color: rgb(64, 94, 3);
+}
+
+.compte
+{
+    
+    background-color: rgb(25, 58, 32);
+}
+.errorp
+{
+    position: relative;
+    top: 150px;
+}
+.user-profil
+{
+    background-color: honeydew;
+    position: relative;
+    margin-bottom: 100px;
+}
+.avatar-mini
+{
+    max-width: 24px;
+    max-width: 24px;
+}
+.foodone, .user-profil
+{
+    position: relative;
+    top: 200px;
+    padding-bottom: 150px;
+}
+.food-list
+{top: 200px;
+    min-height: 100%;
+    margin-bottom: 200px;
+}
+.food-page
+{
+    position: relative;
+    
+    margin-bottom: 200px;
+}
+.food-category
+{
+    position: relative;
+    top: 150px;
+}
+.page-footer
+{
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+}
+.title
+{
+    padding-top: 50px;
+}

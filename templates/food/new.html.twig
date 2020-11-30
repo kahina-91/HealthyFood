@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+{% block title %}Add food{% endblock %}
+{% form_theme form _self %}
+
+{% block body %}
+    <div class="container addfood bg-light p-3">
+        <h1>Add food</h1>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button type="submit" class="btn btn-primary">Add article</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+{% block title %}Registration{% endblock %}
+{% block body %}
+    <div class="container register bg-light py-3 px-3">
+        <h1>Register on our site !</h1>
+
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn btn-secondary" type="submit">Register</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block name %}Edit of article{% endblock %}
+{% block body %}
+    <div class="container addfood">
+        <h1>Edit food : {{ food.name }}</h1>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button type="submit" class="btn btn-primary">Add article</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

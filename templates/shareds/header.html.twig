@@ -1,0 +1,78 @@
+<nav class="navbar navbar-expand-lg mt-0 navbar-fixed-top navbar-dark principal"  style="position: fixed; z-index: 99;">
+    <a class="navbar-brand" href="{{ path('homepage') }}">
+        <img src="/images/logo.png" alt="" class="logo">
+        <span class="text-success">Food&Body</span>    
+    </a>
+
+    <nav class="navbar justify-content-between">
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ path('homepage') }}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('food', {'category': 'vegetables' })}}">
+                    Vegetables</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('food', {'category': 'fruit' })}}">Fruits</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('food', {'category': 'oils' })}}">Oils</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('food', {'category': 'legumes' })}}">Legumes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('food', {'category': 'dried_fruit' })}}">Dried fruits</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('food', {'category': 'cereals' })}}">Cereals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('food', {'category': 'fishes and shellfishe' })}}">Fishes and shellfish</a>
+                </li>
+            
+            </ul>  
+        </div>
+
+    </nav>
+
+</nav>
+<nav class="float-right navbar navbar-expand-lg mt-0 navbar-fixed-top navbar-dark principal">
+    <ul class="navbar-nav my-2 my-lg-3 p-1 navbar-dark text-right mt-5 mr-5">
+        {% if app.user %}
+        
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle text-light" data-toggle="dropdown" id="accountDropdownLink">
+                    <img src="{{app.user.picture}}" class="avatar avatar-mini" alt="avatar of {{app.user.fullName}}"> {{app.user.fullName}}
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-label="accountDropdownLink">
+                    <a href="{{ path('food_create') }}" class="dropdown-item">Creat an article</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="{{ path('account_index') }}" class="dropdown-item">My account</a>
+                    <a href="{{ path('account_profile') }}" class="dropdown-item">update my profile</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="{{ path('account_logout') }}" class="dropdown-item">Deconnection</a>
+                </div>
+            </li>
+        {% else %}
+            <li class="nav-item">
+                <a href="{{ path('account_register') }}" class="nav-link">Register</a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ path('account_login') }}" class="nav-link">Connection</a>
+            </li>
+        {% endif %}
+    </ul>
+</nav>
+
+{% for label, messages in app.flashes %}
+    <div class="container">
+        <div class="alert alert-{{ label }}">
+            {% for message in messages %}
+                <p>{{ message | raw }}</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endfor %}

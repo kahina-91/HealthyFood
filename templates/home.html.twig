@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<video id="videoBG" poster="/images/video.png" autoplay muted loop>
+    <source src="/images/Kitchen.mp4" type="video/mp4">
+</video>
+    <div class="container">
+        <div class="jumbotron row">
+            <div class="col-md-12">
+                <h1 class="display-3 text-success">Welcome to Food&Body !</h1>
+                <p class="lead text-bold text-light"><strong>A site to help you feed your body well and a list of foods that contribute to his or her growth and health.</strong></p>
+                <hr class="my-4">
+                <p class="lead text-light"><strong>You want to give your family a healthy diet ?</strong> </p>
+            </div>
+        </div>
+        <div class="food">
+            <h2 class="titfr pt-3 text-light pl-3"><strong>Most popular fruit in the world</strong></h2>
+            <div class="row veget">
+                <div class="col-md-4">
+                    <div class="card bg-light mb-3">
+                        <div class="card-header text-center">
+                            <strong>Banana</strong>
+                        </div>
+                        <img src="/images/bananas-652497_640.jpg" alt="" style="height: 200px; width: 100%; display: block">
+                        <div class="card-body">
+                            <a href="/food/fruit/Banana" class="btn btn-secondary">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-light mb-3">
+                        <div class="card-header text-center">
+                            <strong>Watermelon</strong>
+                        </div>
+                        <img src="/images/watermelon-2409368_640.jpg" alt="" style="height: 200px; width: 100%; display: block">
+                        <div class="card-body">
+                            <a href="/food/fruit/Watermelon" class="btn btn-secondary">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-light mb-3">
+                        <div class="card-header text-center">
+                            <strong>Apple</strong>
+                        </div>
+                        <img src="/images/green.jpg" alt="" style="height: 200px; width: 100%; display: block">
+                        <div class="card-body">
+                            <a href="/food/fruit/Apple" class="btn btn-secondary">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 class="titfr text-light pl-3"><strong>Most popular vegetables in the world</strong></h2>
+            <div class="row veget">
+                <div class="col-md-4">
+                    <div class="card bg-light mb-3">
+                        <div class="card-header text-center">
+                            <strong>Tomato</strong>
+                        </div>
+                        <img src="/images/tomatoes.jpg" alt="" style="height: 200px; width: 100%; display: block">
+                        <div class="card-body">
+                            <a href="/food/vegetables/Tomato" class="btn btn-secondary">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-light mb-3">
+                        <div class="card-header text-center">
+                            <strong>Onions</strong>
+                        </div>
+                        <img src="/images/foods-4869862_1280.jpg" alt="" style="height: 200px; width: 100%; display: block">
+                        <div class="card-body">
+                            <a href="/food/vegetables/Onion" class="btn btn-secondary">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-light mb-3">
+                        <div class="card-header text-center">
+                            <strong>Cucumbers</strong>
+                        </div>
+                        <img src="/images/cucumber-685704_1280.jpg" alt="" style="height: 200px; width: 100%; display: block">
+                        <div class="card-body">
+                            <a href="/food/vegetables/Cucumbers" class="btn btn-secondary">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

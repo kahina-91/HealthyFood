@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    {{ food.category }}
+{% endblock %}
+{% block body %}
+<div class="typefood" style="background: url('{{ food.coverImage }}'); background-size: cover; background-repeat: no-repeat;">
+    <div class="container foodone bg-white col-md-7 mb-5">
+        <div class="text-center">
+            <h1>{{ food.name }}</h1>
+        </div> 
+        <div class="container food-page row">
+              
+                    <div class="card bg-light mb-3 col-md-8">
+                        <div class="card-header text-center">
+                            <strong>{{ food.name}}</strong>
+                        </div>
+                        {% if app.user and app.user == food.author %}
+                            <a href="{{ path('food_edit', {'name': food.name, 'category': food.category}) }}", class="btn btn-secondary">update article</a>
+                        {% endif %}
+                        <img src="{{ food.coverImage}}" alt="" style="height: auto; width: 500px; display: block">
+                        <div class="card-body">
+                            <div>{{ food.introduction }}</div>
+                            <div>
+                                <h2>Calories: </h2>
+                                <p>{{ food.calories }}</p>
+                            </div>
+                            <div>
+                                <h2>Vitamins and minerals: </h2>
+                                <p>{{ food.vitaminsAndMinerals }}</p>
+                            </div>
+                            <div>
+                                <h2>Benefits: </h2>
+                                <p>{{ food.benefits }}</p>
+                            </div>
+                        </div>
+                        <hr>
+
+                        {% if food.comments |length > 0 %}
+                            <h2 class="mb-3 text-success">Comments :</h2>
+                            {% for comment in food.comments %}
+                                <div class="bg-light rounded mb-3 py-3 px-3">
+                                    <strong>{{ comment.author.fullName }}</strong> has said :
+                                    <blockquote>
+                                        {{comment.content}}
+                                    </blockquote>
+                                    <strong>The note given by {{comment.author.fullName}} :</strong> {{comment.rating}}
+                                </div>
+                                
+                            {% endfor %}
+                        {% else %}
+                            <h2 class="text-warning">This article has not yet received a comments ...</h2>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-4">
+                        {% set a = food.author %}
+                        <div class="mb-3 align-items-center">
+                            <div class="">
+                                <a href="{{ path('user_show', {'slug': a.slug}) }}">
+                                    <img src="{{a.picture}}" class="avatar avatar-medium" alt="Avatar de {{a.fullName}}">
+                                </a>
+                            </div>
+                            <div class="">
+                                <a href="{{ path('user_show', {'slug': a.slug}) }}" class="text-success">
+                                    <h3>{{a.fullName}}</h3>
+                                </a>
+                            </div>
+                            <span class="badge badge-success">{{a.food | length}} articles</span>
+                        </div>
+                        <p>{{ a.introduction | raw}}</p>
+                    </div>
+                 
+            <div class="alert alert-light col-md-12">
+                <h2 class="alert-heading">Your opinion counts !</h2>
+                
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <button type="submit" class="btn btn-secondary">Confirm !</button>
+                {{ form_end(form) }}
+            </div>   
+        </div> 
+        
+    </div>
+</div>
+{% endblock %}
